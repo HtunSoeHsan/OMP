@@ -74,7 +74,252 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Products</li>
                         </ol>
-
+                        <section class="py-5" id="promotion">
+                            <table>
+                                <tr>
+                                  <td>
+                                    <div class="row g-3 align-items-center">
+                                      <div class="col-auto">
+                                        <label for="inputPassword6" class="col-form-label fs-4">Image</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="file" id="pimage" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                            
+                                <tr>
+                                  <td>
+                                    <div class="row g-3 align-items-center mt-1">
+                                      <div class="col-auto">
+                                        <label for="inputPassword6" class="col-form-label fs-4">Type</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="password" id="ptype" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="row g-3 align-items-center mt-1">
+                                      <div class="col-auto">
+                                        <label for="inputPassword6" class="col-form-label fs-4">Size</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="password" id="psize" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="row g-3 align-items-center mt-1">
+                                      <div class="col-auto">
+                                        <label for="inputPassword6" class="col-form-label fs-4">Price</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="password" id="pprice" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="row g-20 align-items-center mt-4">
+                                      <div class="col-auto">
+                                        <label for="inputPassword6" class="col-form-label fs-4">Desc</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="password" id="pdesc" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                              <div>
+                                <button class="btn btn-primary text-center" id="savebtn">Save</button>
+                              </div>
+                              
+                              <!-- show product list -->
+                            <div class="container px-4 px-lg-5 mt-5">
+                                
+                                <div class="row gx-4 gx-lg-5 justify-content-center" id="productContainer">
+                                    <div class="col mb-5" id="newProduct" >
+                                        <div class="card h-100">
+                                            <!-- Sale badge-->
+                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                                Promotion</div>
+                                            <!-- Product image-->
+                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                            <!-- Product details-->
+                                            <div class="card-body p-4">
+                                                <div class="text-center">
+                                                    <!-- Product name-->
+                                                    <h5 class="fw-bolder">Special Item</h5>
+                                                    <!-- Product reviews-->
+                                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                    </div>
+                                                    <!-- Product price-->
+                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                                    $18.00
+                                                </div>
+                                            </div>
+                                            <!-- Product actions-->
+                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center">
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-5">
+                                        <div class="card h-100">
+                                            <!-- Sale badge-->
+                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                                Promotion</div>
+                                            <!-- Product image-->
+                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                            <!-- Product details-->
+                                            <div class="card-body p-4">
+                                                <div class="text-center">
+                                                    <!-- Product name-->
+                                                    <h5 class="fw-bolder">Special Item</h5>
+                                                    <!-- Product reviews-->
+                                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                    </div>
+                                                    <!-- Product price-->
+                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                                    $18.00
+                                                </div>
+                                            </div>
+                                            <!-- Product actions-->
+                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center">
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-5">
+                                        <div class="card h-100">
+                                            <!-- Sale badge-->
+                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                                Promotion</div>
+                                            <!-- Product image-->
+                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                            <!-- Product details-->
+                                            <div class="card-body p-4">
+                                                <div class="text-center">
+                                                    <!-- Product name-->
+                                                    <h5 class="fw-bolder">Special Item</h5>
+                                                    <!-- Product reviews-->
+                                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                    </div>
+                                                    <!-- Product price-->
+                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                                    $18.00
+                                                </div>
+                                            </div>
+                                            <!-- Product actions-->
+                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center">
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-5">
+                                        <div class="card h-100">
+                                            <!-- Sale badge-->
+                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                                Promotion</div>
+                                            <!-- Product image-->
+                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                            <!-- Product details-->
+                                            <div class="card-body p-4">
+                                                <div class="text-center">
+                                                    <!-- Product name-->
+                                                    <h5 class="fw-bolder">Special Item</h5>
+                                                    <!-- Product reviews-->
+                                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="bi-star-fill"></div>
+                                                    </div>
+                                                    <!-- Product price-->
+                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                                    $18.00
+                                                </div>
+                                            </div>
+                                            <!-- Product actions-->
+                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center">
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
+                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -98,5 +343,12 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <!-- Include Dexie -->
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+  <!-- Custom main file-->
+  <script src="../js/main.js" type="module"></script>
+        <script src="./js/product.js"></script>
+
     </body>
 </html>
