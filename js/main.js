@@ -6,8 +6,8 @@ import prodb, {
 } from "./module.js";
 
 
-let db = prodb("Productdb", {
-  products: `++id, name, seller, price`
+let db = prodb("OMP", {
+  products: `++id, name, promotion, status, price`
 });
 
 // input tags
@@ -16,17 +16,29 @@ const ptype = document.getElementById("ptype");
 const pprice = document.getElementById("pprice");
 const psize = document.getElementById("psize");
 const pdesc = document.getElementById("pdesc");
-
+// for edit input
+var edit_image = document.getElementById("edit_image");
+  var edit_type = document.getElementById("edit_type");
+  var edit_size = document.getElementById("edit_size");
+  var edit_price = document.getElementById("edit_price");
+  var edit_desc = document.getElementById("edit_desc");
+  var productID = document.getElementById("productID");
+// get image file 
+  // pimage.addEventListener('change', (e)=>{
+  //   console.log("e", e);
+  //   let reader = new FileReader();
+  //   reader.readAsDataURL(e[1])
+  // })
 // save button
 const savebtn = document.getElementById("savebtn");
 
 // create button
-const btncreate = document.getElementById("btn-create");
-const btnread = document.getElementById("btn-read");
+// const btnread = document.getElementById("btn-read");
 const btnupdate = document.getElementById("btn-update");
 const btndelete = document.getElementById("btn-delete");
 
-// user data
+// product data
+product()
 
 // event listerner for create button
 savebtn.onclick = event => {
@@ -36,51 +48,58 @@ savebtn.onclick = event => {
     type: ptype.value,
     price: pprice.value,
     size: psize.value,
-    desc: pdesc.value
+    desc: pdesc.value,
+    
 
   });
   // reset textbox values
   pimage.value = ptype.value = pprice.value = psize.value = pdesc.value = "";
 
   // set id textbox value
-  getData(db.products, data => {
-    userid.value = data.id + 1 || 1;
-  });
+  // getData(db.products, data => {
+  //   userid.value = data.id + 1 || 1;
+  //   console.log("data id", data.id)
+  // });
   product();
 
-  let insertmsg = document.querySelector(".insertmsg");
-  getMsg(flag, insertmsg);
+  // let insertmsg = document.querySelector(".insertmsg");
+  // getMsg(flag, insertmsg);
 };
 
 // event listerner for create button
-btnread.onclick = product;
+// btnread.onclick = product;
 
 // button update
-// btnupdate.onclick = () => {
-//   const id = parseInt(userid.value || 0);
-//   if (id) {
-//     // call dexie update method
-//     db.products.update(id, {
-//       name: proname.value,
-//       seller: seller.value,
-//       price: price.value
-//     }).then((updated) => {
-//       // let get = updated ? `data updated` : `couldn't update data`;
-//       let get = updated ? true : false;
+btnupdate.onclick = () => {
+  const upid = parseInt(productID.value);
+  console.log("update id",upid)
+  if (upid) {
+    // call dexie update method
+    db.products.update(upid, {
+      // image: sortobj.image,
+      type: edit_type.value,
+      size: edit_size.value,
+      price: edit_price.value,
+      desc: edit_desc.value
+    })
+    location.reload();
+    // .then((updated) => {
+    //   // let get = updated ? `data updated` : `couldn't update data`;
+    //   let get = updated ? true : false;
 
-//       // display message
-//       let updatemsg = document.querySelector(".updatemsg");
-//       getMsg(get, updatemsg);
+    //   // display message
+    //   let updatemsg = document.querySelector(".updatemsg");
+    //   getMsg(get, updatemsg);
 
-//       proname.value = seller.value = price.value = "";
-//       //console.log(get);
-//     })
-//   } else {
-//     console.log(`Please Select id: ${id}`);
-//   }
-// }
+    //   // proname.value = seller.value = price.value = "";
+    //   //console.log(get);
+    // })
+  } else {
+    console.log(`Please Select id: ${id}`);
+  }
+}
 
-// delete button
+// for delete button
 // btndelete.onclick = () => {
 //   db.delete();
 //   db = prodb("Productdb", {
@@ -106,7 +125,7 @@ function product() {
 
   const productcontainer = document.getElementById("productContainer");
   const newprodct = document.getElementById("newProduct");
-  // const notfound = document.getElementById("notfound");
+  const notfound = document.getElementById("notfound");
   // notfound.textContent = "";
   // remove all childs from the dom first
   // while (tbody.hasChildNodes()) {
@@ -116,29 +135,82 @@ function product() {
 
   getData(db.products, (data, index) => {
     if (data) {
-      createEle("div", productcontainer, tr => {
-        for (const value in data) {
-          createEle("div", tr, td => {
-            td.textContent = data.price === data[value] ? `$ ${data[value]}` : data[value];
-          });
-        }
-        createEle("td", tr, td => {
-          createEle("i", td, i => {
-            i.className += "fas fa-edit btnedit";
-            i.setAttribute(`data-id`, data.id);
-            // store number of edit buttons
-            i.onclick = editbtn;
-          });
+      console.log(typeof data)
+      for (const value in data) {
+      console.log("data value", data[value].price)
+      createEle("div", productcontainer, div_col => {
+        div_col.className += "col mb-5";
+        createEle("div", div_col, div_card =>{
+          div_card.className += "card h-100";
+          // createEle("div", div_card, div_title =>{
+          //   div_title.className += "badge bg-dark text-white position-absolute";
+          // })
+          
+            // for product image
+            createEle("img", div_card, product_img =>{
+              product_img.className += "card-img-top";
+              product_img.setAttribute("src", data[value].image);
+              product_img.setAttribute("alt","product image");
+            })
+  
+            // for product details
+            createEle("div", div_card, card_body=>{
+              card_body.className += "card-body p-4";
+              createEle("div", card_body, body_center =>{
+                body_center.className += "text-center";
+                createEle("h5", body_center, product_name =>{
+                  product_name.className += "fw-bolder";
+                  product_name.textContent = data[value].type;
+                })
+                createEle("div", body_center, product_size =>{
+                  product_size.textContent = "Size:" + data[value].size;
+
+                })
+                createEle("div", body_center, product_price =>{
+                  product_price.textContent = "Price:" + data[value].price + "$";
+
+                })
+                createEle("div", body_center, product_desc =>{
+                  product_desc.textContent = "Price:" + data[value].desc;
+
+                })
+              })
+            })
+            // product card action
+            createEle("div", div_card, product_action => {
+              product_action.className += "card-footer p-2 pt-0 border-top-0 bg-transparent";
+              createEle("div",product_action, action_center =>{
+                action_center.className += "text-center";
+                createEle("a", action_center, action_btn1 =>{
+                  action_btn1.className += "btn btn-success mt-auto";
+                  action_btn1.textContent = "Active";
+
+                })
+                createEle("a", action_center, action_btn2 =>{
+                  action_btn2.className += "btn btn-outline-dark mt-auto";
+                  action_btn2.textContent = "Edit";
+                  
+                  action_btn2.setAttribute("data-id",data[value].id);
+                  action_btn2.setAttribute("data-bs-toggle","modal");
+                  action_btn2.setAttribute("data-bs-target","#editModal")
+
+                  action_btn2.onclick = editfn;
+                })
+                createEle("a", action_center, action_btn3 =>{
+                  action_btn3.className += "btn btn-danger btn-outline-dark mt-auto";
+                  action_btn3.textContent = "Delete";
+                  action_btn3.setAttribute("data-id",data[value].id);
+                  action_btn3.onclick = deletefn;
+
+                })
+              })
+            });
+          
         })
-        createEle("td", tr, td => {
-          createEle("i", td, i => {
-            i.className += "fas fa-trash-alt btndelete";
-            i.setAttribute(`data-id`, data.id);
-            // store number of edit buttons
-            i.onclick = deletebtn;
-          });
-        })
+        
       });
+    }
+      console.log(data)
     } else {
       notfound.textContent = "No record found in the database...!";
     }
@@ -146,23 +218,47 @@ function product() {
   });
 }
 
-// const editbtn = (event) => {
-//   let id = parseInt(event.target.dataset.id);
-//   db.products.get(id, function (data) {
-//     let newdata = SortObj(data);
-//     userid.value = newdata.id || 0;
-//     proname.value = newdata.name || "";
-//     seller.value = newdata.seller || "";
-//     price.value = newdata.price || "";
-//   });
-// }
+// for edit product
+const editfn = (event) => {
+  let id = parseInt(event.target.dataset.id);
+    db.products.get(id, function (data) {
+    edit_type.value = data.price
+    // let newdata = SortObj(data);
+    // edit_image.value = data.image || 0;
+    productID.value = id;
+    edit_type.value = data.type || "";
+    edit_size.value = data.size || "";
+    edit_price.value = data.price || "";
+    edit_desc.value = data.desc || "";
+
+  });
+}
 
 // delete icon remove element 
-// const deletebtn = event => {
-//   let id = parseInt(event.target.dataset.id);
-//   db.products.delete(id);
-//   product();
-// }
+const deletefn = event => {
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this imaginary file!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      let did = parseInt(event.target.dataset.id);
+      db.products.delete(did);
+      swal("Poof! Your imaginary file has been deleted!", {
+        icon: "success",
+        
+      }).then(function(){ 
+        location.reload();
+    });
+      
+    } else {
+      swal("Your imaginary file is safe!");
+    }
+  });
+}
 
 // textbox id
 function textID(textboxid) {
@@ -172,15 +268,15 @@ function textID(textboxid) {
 }
 
 // function msg
-function getMsg(flag, element) {
-  if (flag) {
-    // call msg 
-    element.className += " movedown";
+// function getMsg(flag, element) {
+//   if (flag) {
+//     // call msg 
+//     element.className += " movedown";
 
-    setTimeout(() => {
-      element.classList.forEach(classname => {
-        classname == "movedown" ? undefined : element.classList.remove('movedown');
-      })
-    }, 4000);
-  }
-}
+//     setTimeout(() => {
+//       element.classList.forEach(classname => {
+//         classname == "movedown" ? undefined : element.classList.remove('movedown');
+//       })
+//     }, 4000);
+//   }
+// }

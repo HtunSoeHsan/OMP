@@ -1,6 +1,6 @@
 const productsdb = (dbname, table) => {
   const db = new Dexie(dbname);
-  db.version(1).stores(table);
+  db.version(2).stores(table);
   db.open();
 
   return db;
@@ -65,12 +65,17 @@ const getData = (dbname, fn) => {
 const SortObj = (sortobj) => {
   let obj = {};
   obj = {
+    
+    type: sortobj.type,
     id: sortobj.id,
-    name: sortobj.name,
-    seller: sortobj.seller,
-    price: sortobj.price
+    size: sortobj.size,
+    price: sortobj.price,
+    image: sortobj.image,
+    desc: sortobj.desc
   };
-  return obj;
+  let objArray =[];
+  objArray.push(obj);
+  return objArray;
 }
 
 

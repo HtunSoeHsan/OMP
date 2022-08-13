@@ -74,13 +74,13 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Products</li>
                         </ol>
-                        <section class="py-5" id="promotion">
+                        <section class="mx-5 w-25 " id="">
                             <table>
                                 <tr>
                                   <td>
                                     <div class="row g-3 align-items-center">
                                       <div class="col-auto">
-                                        <label for="inputPassword6" class="col-form-label fs-4">Image</label>
+                                        <label for="" class="col-form-label fs-4">Image</label>
                                       </div>
                                   </td>
                                   <td>
@@ -99,12 +99,12 @@
                                   <td>
                                     <div class="row g-3 align-items-center mt-1">
                                       <div class="col-auto">
-                                        <label for="inputPassword6" class="col-form-label fs-4">Type</label>
+                                        <label for="" class="col-form-label fs-4">Type</label>
                                       </div>
                                   </td>
                                   <td>
                                     <div class="col-auto">
-                                      <input type="password" id="ptype" class="form-control" aria-describedby="passwordHelpInline">
+                                      <input type="text" id="ptype" class="form-control" aria-describedby="passwordHelpInline">
                                     </div>
                                     <div class="col-auto">
                                       <span id="passwordHelpInline" class="form-text">
@@ -117,12 +117,12 @@
                                   <td>
                                     <div class="row g-3 align-items-center mt-1">
                                       <div class="col-auto">
-                                        <label for="inputPassword6" class="col-form-label fs-4">Size</label>
+                                        <label for="" class="col-form-label fs-4">Size</label>
                                       </div>
                                   </td>
                                   <td>
                                     <div class="col-auto">
-                                      <input type="password" id="psize" class="form-control" aria-describedby="passwordHelpInline">
+                                      <input type="text" id="psize" class="form-control" aria-describedby="passwordHelpInline">
                                     </div>
                                     <div class="col-auto">
                                       <span id="passwordHelpInline" class="form-text">
@@ -135,12 +135,12 @@
                                   <td>
                                     <div class="row g-3 align-items-center mt-1">
                                       <div class="col-auto">
-                                        <label for="inputPassword6" class="col-form-label fs-4">Price</label>
+                                        <label for="" class="col-form-label fs-4">Price</label>
                                       </div>
                                   </td>
                                   <td>
                                     <div class="col-auto">
-                                      <input type="password" id="pprice" class="form-control" aria-describedby="passwordHelpInline">
+                                      <input type="number" id="pprice" class="form-control" aria-describedby="passwordHelpInline">
                                     </div>
                                     <div class="col-auto">
                                       <span id="passwordHelpInline" class="form-text">
@@ -153,12 +153,16 @@
                                   <td>
                                     <div class="row g-20 align-items-center mt-4">
                                       <div class="col-auto">
-                                        <label for="inputPassword6" class="col-form-label fs-4">Desc</label>
+                                        <label for="" class="col-form-label fs-4">Desc</label>
                                       </div>
                                   </td>
                                   <td>
                                     <div class="col-auto">
-                                      <input type="password" id="pdesc" class="form-control" aria-describedby="passwordHelpInline">
+                                      <!-- <input type="text" id="pdesc" class="form-control" aria-describedby="passwordHelpInline"> -->
+                                      <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Comments</label>
+                                      </div>
                                     </div>
                                     <div class="col-auto">
                                       <span id="passwordHelpInline" class="form-text">
@@ -168,160 +172,81 @@
                                   </td>
                                 </tr>
                               </table>
-                              <div>
-                                <button class="btn btn-primary text-center" id="savebtn">Save</button>
-                              </div>
+                              <button class="btn btn-primary text-center float-end" id="savebtn">Save</button>
+
                               
                               <!-- show product list -->
-                            <div class="container px-4 px-lg-5 mt-5">
-                                
-                                <div class="row gx-4 gx-lg-5 justify-content-center" id="productContainer">
-                                    <div class="col mb-5" id="newProduct" >
-                                        <div class="card h-100">
-                                            <!-- Sale badge-->
-                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                                                Promotion</div>
-                                            <!-- Product image-->
-                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                                            <!-- Product details-->
-                                            <div class="card-body p-4">
-                                                <div class="text-center">
-                                                    <!-- Product name-->
-                                                    <h5 class="fw-bolder">Special Item</h5>
-                                                    <!-- Product reviews-->
-                                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                    </div>
-                                                    <!-- Product price-->
-                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                                    $18.00
-                                                </div>
-                                            </div>
-                                            <!-- Product actions-->
-                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                                <div class="text-center">
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-5">
-                                        <div class="card h-100">
-                                            <!-- Sale badge-->
-                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                                                Promotion</div>
-                                            <!-- Product image-->
-                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                                            <!-- Product details-->
-                                            <div class="card-body p-4">
-                                                <div class="text-center">
-                                                    <!-- Product name-->
-                                                    <h5 class="fw-bolder">Special Item</h5>
-                                                    <!-- Product reviews-->
-                                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                    </div>
-                                                    <!-- Product price-->
-                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                                    $18.00
-                                                </div>
-                                            </div>
-                                            <!-- Product actions-->
-                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                                <div class="text-center">
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-5">
-                                        <div class="card h-100">
-                                            <!-- Sale badge-->
-                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                                                Promotion</div>
-                                            <!-- Product image-->
-                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                                            <!-- Product details-->
-                                            <div class="card-body p-4">
-                                                <div class="text-center">
-                                                    <!-- Product name-->
-                                                    <h5 class="fw-bolder">Special Item</h5>
-                                                    <!-- Product reviews-->
-                                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                    </div>
-                                                    <!-- Product price-->
-                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                                    $18.00
-                                                </div>
-                                            </div>
-                                            <!-- Product actions-->
-                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                                <div class="text-center">
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-5">
-                                        <div class="card h-100">
-                                            <!-- Sale badge-->
-                                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                                                Promotion</div>
-                                            <!-- Product image-->
-                                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                                            <!-- Product details-->
-                                            <div class="card-body p-4">
-                                                <div class="text-center">
-                                                    <!-- Product name-->
-                                                    <h5 class="fw-bolder">Special Item</h5>
-                                                    <!-- Product reviews-->
-                                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                        <div class="bi-star-fill"></div>
-                                                    </div>
-                                                    <!-- Product price-->
-                                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                                    $18.00
-                                                </div>
-                                            </div>
-                                            <!-- Product actions-->
-                                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                                <div class="text-center">
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                                    <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                    
+                            <div class="container px-2 px-lg-5 mt-5">
+                                <div id="notfound"></div>
+                                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 mt-5 row-cols-lg-4 justify-content-center" id="productContainer">
+                                    
                                 </div>
                             </div>
-                        </section>
+                      </section>
                     </div>
                 </main>
+
+                <!-- hidden edit modal form -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="edit_image" class="col-form-label">image</label>
+                </div>
+                <div class="col-auto">
+                  <input type="file" id="edit_image class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="edit_type" class="col-form-label">Type</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="edit_type" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="deit_size" class="col-form-label">Size</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="edit_size" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label  class="col-form-label">Price</label>
+                </div>
+                <div class="col-auto">
+                  <input type="number" id="edit_price" value="" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="edit_desc" class="col-form-label">Desc</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="edit_desc" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <input type="text" id="productID" class="form-control" hidden aria-describedby="passwordHelpInline">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btn-delete" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btn-update">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -343,6 +268,8 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <!-- sweetalert cdn -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <!-- Include Dexie -->
   <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
 
