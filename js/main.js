@@ -7,7 +7,7 @@ import prodb, {
 
 
 let db = prodb("OMP", {
-  products: `++id, name, promotion, status, price`
+  products: `++id, type, promotion, status, price`
 });
 
 // input tags
@@ -41,18 +41,20 @@ const btndelete = document.getElementById("btn-delete");
 product()
 
 // event listerner for create button
-savebtn.onclick = event => {
+savebtn.onclick = (event) => {
   console.log("img src", pimage.getAttribute("src"))
 
   // pimage.getAttribute("src");
   // insert values
   let flag = bulkcreate(db.products, {
-    image: edit_image.getAttribute("src"),
+    image: pimage.getAttribute("src"),
     type: ptype.value,
     price: pprice.value,
     size: psize.value,
     desc: pdesc.value,
-    
+    status: "null",
+    promotion: "null",
+    promotionPrice: "null"
 
   });
   // reset textbox values
@@ -64,6 +66,7 @@ savebtn.onclick = event => {
   //   console.log("data id", data.id)
   // });
   product();
+  location.reload();
 
   // let insertmsg = document.querySelector(".insertmsg");
   // getMsg(flag, insertmsg);
@@ -76,16 +79,24 @@ savebtn.onclick = event => {
 btnupdate.onclick = () => {
   const upid = parseInt(productID.value);
   console.log("update id",upid)
+  console.log("update image",edit_image.getAttribute("src"))
+  console.log("update id",edit_type.value)
+  console.log("update id",edit_size.value)
+  console.log("update id",edit_price.value)
+  console.log("update id",edit_desc.value)
+
   if (upid) {
     // call dexie update method
     db.products.update(upid, {
-      image: edit_image.getAttribute('src'),
+      image: edit_image.getAttribute("src"),
       type: edit_type.value,
-      size: edit_size.value,
       price: edit_price.value,
+      size: edit_size.value,
       desc: edit_desc.value
+
     })
     location.reload();
+
     // .then((updated) => {
     //   // let get = updated ? `data updated` : `couldn't update data`;
     //   let get = updated ? true : false;
@@ -98,7 +109,7 @@ btnupdate.onclick = () => {
     //   //console.log(get);
     // })
   } else {
-    console.log(`Please Select id: ${id}`);
+    console.log(`Please Select id:`);
   }
 }
 
@@ -140,7 +151,7 @@ function product() {
     if (data) {
       console.log(typeof data)
       for (const value in data) {
-      console.log("data value", data[value].price)
+      console.log("data value", data[value].image)
       createEle("div", productcontainer, div_col => {
         div_col.className += "col mb-5";
         createEle("div", div_col, div_card =>{
