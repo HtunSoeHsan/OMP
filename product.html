@@ -69,12 +69,15 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
+                    <div class="container-fluid px-1">
                         <h1 class="mt-4">Products</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Products</li>
                         </ol>
                         <section class="mx-5 " id="">
+                          <div id="TheImageContents">
+                            <img id="previewimg" style="margin-left: 50px;" width="100px" height="100px" src="" alt="">
+                          </div>
                             <table>
                                 <tr>
                                   <td>
@@ -85,7 +88,7 @@
                                   </td>
                                   <td>
                                     <div class="col-auto">
-                                      <input type="file" id="pimage" class="form-control" aria-describedby="passwordHelpInline">
+                                      <input type="file" id="pimage" accept='images/*' editFile onchange='openFile(event);' value="" class="form-control" aria-describedby="passwordHelpInline">
                                     </div>
                                     <div class="col-auto">
                                       <span id="passwordHelpInline" class="form-text">
@@ -169,11 +172,11 @@
                                   </td>
                                 </tr>
                               </table>
-                              <button class="btn btn-primary text-center float-end" id="savebtn">Save</button>
+                              <button class="btn btn-primary text-center" id="savebtn">Save</button>
 
                               
                               <!-- show product list -->
-                            <div class="container px-2 px-lg-5 mt-5">
+                            <div class="container px-3 px-lg-5 mt-5">
                                 <div id="notfound"></div>
                                 <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 mt-5 row-cols-lg-4 justify-content-center" id="productContainer">
                                     
@@ -194,12 +197,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <div id="TheImageContents">
+            <img id="editviewimg" style="margin-left: 50px;" width="100px" height="100px" src="" alt="">
+          </div>
             <div class="row g-3 align-items-center">
+              
                 <div class="col-auto">
                   <label for="edit_image" class="col-form-label">image</label>
                 </div>
                 <div class="col-auto">
-                  <input type="file" id="edit_image class="form-control" aria-describedby="passwordHelpInline">
+                  <input type="file" id="edit_image" accept='images/*' editFile onchange='editFile(event);' value="" class="form-control" aria-describedby="passwordHelpInline">
                 </div>
             </div>
             <div class="row g-3 align-items-center">
@@ -273,6 +280,54 @@
   <!-- Custom main file-->
   <script src="../js/main.js" type="module"></script>
         <script src="./js/product.js"></script>
+        <script>
+          // This grabs the file contents when the file changes
+var openFile = function(event) {
+	var input = event.target;
+console.log("hi reaeder")
+	// Instantiate FileReader
+	var reader = new FileReader();
+	reader.onload = function(){
+		TheFileContents = reader.result;
 
+		// Update the output to include the <img> tag with the data URL as the source
+    // document.getElementById("previewimg").setAttribute("width","150px");
+    // document.getElementById("previewimg").setAttribute("height","150px");
+
+    document.getElementById("previewimg").setAttribute("src",TheFileContents);
+		// document.getElementById("TheImageContents").innerHTML = '<img width="200" style="margin-left:50px;" id="imgaddress" src="'+TheFileContents+'" />';
+
+  };
+
+	// Produce a data URL (base64 encoded string of the data in the file)
+	// We are retrieving the first file from the FileList object
+	reader.readAsDataURL(input.files[0]);
+  console.log(reader.result)
+
+};
+// for edit upload image
+var editFile = function(event) {
+	var input = event.target;
+console.log("hi reaeder")
+	// Instantiate FileReader
+	var reader = new FileReader();
+	reader.onload = function(){
+		TheFileContents = reader.result;
+
+		// Update the output to include the <img> tag with the data URL as the source
+    
+
+    document.getElementById("editviewimg").setAttribute("src",TheFileContents);
+		// document.getElementById("TheImageContents").innerHTML = '<img width="200" style="margin-left:50px;" id="imgaddress" src="'+TheFileContents+'" />';
+
+  };
+
+	// Produce a data URL (base64 encoded string of the data in the file)
+	// We are retrieving the first file from the FileList object
+	reader.readAsDataURL(input.files[0]);
+  console.log(reader.result)
+
+};
+        </script>
     </body>
 </html>

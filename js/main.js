@@ -11,13 +11,13 @@ let db = prodb("OMP", {
 });
 
 // input tags
-const pimage = document.getElementById("pimage");
+const pimage = document.getElementById("previewimg");
 const ptype = document.getElementById("ptype");
 const pprice = document.getElementById("pprice");
 const psize = document.getElementById("psize");
 const pdesc = document.getElementById("pdesc");
 // for edit input
-var edit_image = document.getElementById("edit_image");
+  var edit_image = document.getElementById("editviewimg");
   var edit_type = document.getElementById("edit_type");
   var edit_size = document.getElementById("edit_size");
   var edit_price = document.getElementById("edit_price");
@@ -42,9 +42,12 @@ product()
 
 // event listerner for create button
 savebtn.onclick = event => {
+  console.log("img src", pimage.getAttribute("src"))
+
+  // pimage.getAttribute("src");
   // insert values
   let flag = bulkcreate(db.products, {
-    image: pimage.value,
+    image: edit_image.getAttribute("src"),
     type: ptype.value,
     price: pprice.value,
     size: psize.value,
@@ -76,7 +79,7 @@ btnupdate.onclick = () => {
   if (upid) {
     // call dexie update method
     db.products.update(upid, {
-      // image: sortobj.image,
+      image: edit_image.getAttribute('src'),
       type: edit_type.value,
       size: edit_size.value,
       price: edit_price.value,
@@ -221,10 +224,11 @@ function product() {
 // for edit product
 const editfn = (event) => {
   let id = parseInt(event.target.dataset.id);
+
     db.products.get(id, function (data) {
     edit_type.value = data.price
     // let newdata = SortObj(data);
-    // edit_image.value = data.image || 0;
+    edit_image.setAttribute('src',data.image);
     productID.value = id;
     edit_type.value = data.type || "";
     edit_size.value = data.size || "";
