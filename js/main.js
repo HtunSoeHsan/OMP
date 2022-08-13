@@ -41,7 +41,7 @@ const btndelete = document.getElementById("btn-delete");
 product()
 
 // event listerner for create button
-savebtn.onclick = (event) => {
+savebtn.addEventListener("click",(event) => {
   console.log("img src", pimage.getAttribute("src"))
 
   // pimage.getAttribute("src");
@@ -70,7 +70,8 @@ savebtn.onclick = (event) => {
 
   // let insertmsg = document.querySelector(".insertmsg");
   // getMsg(flag, insertmsg);
-};
+})
+
 
 // event listerner for create button
 // btnread.onclick = product;
@@ -155,7 +156,7 @@ function product() {
       createEle("div", productcontainer, div_col => {
         div_col.className += "col mb-5";
         createEle("div", div_col, div_card =>{
-          div_card.className += "card h-100";
+          div_card.className += "card w-5 h-100";
           // createEle("div", div_card, div_title =>{
           //   div_title.className += "badge bg-dark text-white position-absolute";
           // })
