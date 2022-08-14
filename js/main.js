@@ -7,7 +7,8 @@ import prodb, {
 
 
 let db = prodb("OMP", {
-  products: `++id, type, promotion, status, price`
+  products: `++id, type, promotion,desc, status, price`,
+  user: `++id, email, name, order, status`
 });
 
 // input tags
@@ -16,6 +17,8 @@ const ptype = document.getElementById("ptype");
 const pprice = document.getElementById("pprice");
 const psize = document.getElementById("psize");
 const pdesc = document.getElementById("pdesc");
+// const pdesc1 = document.getElementById("pdesc1");
+
 // for edit input
   var edit_image = document.getElementById("editviewimg");
   var edit_type = document.getElementById("edit_type");
@@ -42,7 +45,7 @@ product()
 
 // event listerner for create button
 savebtn.addEventListener("click",(event) => {
-  console.log("img src", pimage.getAttribute("src"))
+  // console.log("img src", pimage.getAttribute("src"))
 
   // pimage.getAttribute("src");
   // insert values
@@ -52,9 +55,10 @@ savebtn.addEventListener("click",(event) => {
     price: pprice.value,
     size: psize.value,
     desc: pdesc.value,
-    status: "null",
-    promotion: "null",
-    promotionPrice: "null"
+    title: "no",
+    status: "Active",
+    promotion: "no",
+    promotionPrice: "no"
 
   });
   // reset textbox values
@@ -152,7 +156,7 @@ function product() {
     if (data) {
       console.log(typeof data)
       for (const value in data) {
-      console.log("data value", data[value].image)
+      console.log("data value", data[value].promotion)
       createEle("div", productcontainer, div_col => {
         div_col.className += "col mb-5";
         createEle("div", div_col, div_card =>{
@@ -186,7 +190,7 @@ function product() {
 
                 })
                 createEle("div", body_center, product_desc =>{
-                  product_desc.textContent = "Price:" + data[value].desc;
+                  product_desc.textContent = "Title:" + data[value].desc;
 
                 })
               })
@@ -198,7 +202,11 @@ function product() {
                 action_center.className += "text-center";
                 createEle("a", action_center, action_btn1 =>{
                   action_btn1.className += "btn btn-success mt-auto";
-                  action_btn1.textContent = "Active";
+                  action_btn1.textContent = data[value].status;
+                  action_btn1.setAttribute("data-id",data[value].id);
+                  action_btn1.setAttribute("id","activebtn");
+                  action_btn1.onclick = activefn;
+
 
                 })
                 createEle("a", action_center, action_btn2 =>{
@@ -208,11 +216,10 @@ function product() {
                   action_btn2.setAttribute("data-id",data[value].id);
                   action_btn2.setAttribute("data-bs-toggle","modal");
                   action_btn2.setAttribute("data-bs-target","#editModal")
-
                   action_btn2.onclick = editfn;
                 })
                 createEle("a", action_center, action_btn3 =>{
-                  action_btn3.className += "btn btn-danger btn-outline-dark mt-auto";
+                  action_btn3.className += "btn btn-outline-dark mt-auto";
                   action_btn3.textContent = "Delete";
                   action_btn3.setAttribute("data-id",data[value].id);
                   action_btn3.onclick = deletefn;
@@ -276,12 +283,37 @@ const deletefn = event => {
   });
 }
 
+// active function
+const activefn = event =>{
+  let aid = parseInt(event.target.dataset.id);
+  console.log("active id",aid)
+  let activebtn = document.getElementById("activebtn");
+  console.log("actvie text", activebtn.textContent)
+  if (activebtn.textContent == "Unactive") {
+    console.log("yes")
+    // call dexie update method
+    db.products.update(aid, {
+      status: "Active"
+    })
+    // activebtn.textContent = "Unactive";
+    // location.reload();
+}
+else{
+  db.products.update(aid, {
+    status: "Unactive"
+  })
+  console.log("not ")
+
+}
+
+}
 // textbox id
 function textID(textboxid) {
   getData(db.products, data => {
     textboxid.value = data.id + 1 || 1;
   });
 }
+
 
 // function msg
 // function getMsg(flag, element) {
@@ -296,3 +328,5 @@ function textID(textboxid) {
 //     }, 4000);
 //   }
 // }
+
+export default db;
