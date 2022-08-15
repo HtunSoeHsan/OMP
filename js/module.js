@@ -1,6 +1,6 @@
 const productsdb = (dbname, table) => {
   const db = new Dexie(dbname);
-  db.version(1).stores(table);
+  db.version(7).stores(table);
   db.open();
 
   return db;
@@ -62,6 +62,23 @@ const getData = (dbname, fn) => {
   });
 };
 
+const userData = (dbname, fn) =>{
+  let index = 0;
+  let obj = {};
+  dbname.count(count => {
+    // count rows in the table using count method
+    if (count) {
+      dbname.each(table => {
+        // table => return the table object data
+        // to arrange order we are going to create for in loop
+        obj = SortuserObj(table);
+        fn(obj, index++); // call function with data argument
+      });
+    } else {
+      fn(0);
+    }
+  });
+}
 const SortObj = (sortobj) => {
   let obj = {};
   obj = {
@@ -81,11 +98,33 @@ const SortObj = (sortobj) => {
   return objArray;
 }
 
+// for sort user
 
+const SortuserObj = (SortuserObj) => {
+  let userobj = {};
+  userobj = {
+    id: SortuserObj.id,
+    name: SortuserObj.name,
+    phone: SortuserObj.phone,
+    email: SortuserObj.email,
+    address: SortuserObj.address,
+    profile: SortuserObj.profile,
+    password: SortuserObj.password
+
+  };
+  let userObjArray =[];
+  userObjArray.push(userobj);
+  return userObjArray;
+}
 export default productsdb;
 export {
   bulkcreate,
   createEle,
   getData,
-  SortObj
+  SortObj,
+  userData,
+  SortuserObj
 };
+
+
+

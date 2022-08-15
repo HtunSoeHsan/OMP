@@ -70,7 +70,7 @@ savebtn.addEventListener("click",(event) => {
   //   console.log("data id", data.id)
   // });
   product();
-  location.reload();
+  // location.reload();
 
   // let insertmsg = document.querySelector(".insertmsg");
   // getMsg(flag, insertmsg);
@@ -219,7 +219,7 @@ function product() {
                   action_btn2.onclick = editfn;
                 })
                 createEle("a", action_center, action_btn3 =>{
-                  action_btn3.className += "btn btn-outline-dark mt-auto";
+                  action_btn3.className += "btn btn-danger mt-auto";
                   action_btn3.textContent = "Delete";
                   action_btn3.setAttribute("data-id",data[value].id);
                   action_btn3.onclick = deletefn;
@@ -296,7 +296,6 @@ const activefn = event =>{
       status: "Active"
     })
     // activebtn.textContent = "Unactive";
-    // location.reload();
 }
 else{
   db.products.update(aid, {

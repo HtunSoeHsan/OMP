@@ -11774,6 +11774,9 @@ section#contact form#contactForm :-ms-input-placeholder {
   display: flex;
   justify-content: space-between;
 } */
+.hide-me{
+  display: none;
+}
 @media (mix-width: 789px) {
   .shop-info{
     display: block;

@@ -80,7 +80,7 @@ db.products
                       // action_btn2.onclick = editfn;
                     })
                     createEle("a", action_center, action_btn3 =>{
-                      action_btn3.className += "btn btn-danger btn-outline-dark mt-auto";
+                      action_btn3.className += "btn btn-outline-dark mt-auto";
                       action_btn3.textContent = "Cart";
                       action_btn3.setAttribute("data-id",product.id);
                       // action_btn3.onclick = deletefn;

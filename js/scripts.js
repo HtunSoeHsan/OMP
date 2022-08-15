@@ -11,11 +11,11 @@ window.addEventListener('DOMContentLoaded', event => {
     // if(sessionStorage.getItem("user")){
     //     // document.getElementById("profile").innerHTML
     // }
-    console.log(JSON.parse(sessionStorage.getItem("user")))
-    const user = JSON.parse(sessionStorage.getItem("user")) || "null"
+    console.log(JSON.parse(localStorage.getItem("userobj")));
+    const user = JSON.parse(localStorage.getItem("userobj"));
     console.log("user name", user.name)
     // document.getElementById("profile").parentElement.TEXT_NODE ="htun";
-{/* <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+/* <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', event => {
                         <li><a class="dropdown-item" href="#!">Logout</a></li>
                     </ul>
                 </li>
-            </ul> */}
+            </ul> */
 
             // var profileContainer = document.getElementById("profile-container");
             // var profile_main_li = document.createElement("li");
@@ -39,24 +39,18 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 // user profile
-    if(user!="null"){
+    if(user){
        
-        document.getElementById("profile_name").innerHTML = user.name;
-        document.getElementById("login").style.display = "none";
-        document.getElementById("profile_container").style.display = "block";
-    }
-    else{
-        document.getElementById("login").style.display = "block";
-        document.getElementById("profile_container").style.display = "none";
-        
+        document.getElementById("profile_name").textContent = user.name;
+        document.getElementById("profile-img").setAttribute("src",user.profile)
+        document.getElementById("login").classList.add("hide-me")
+        document.getElementById("profile_container").classList.remove("hide-me")
         }
 
 //  user logout
-function logout(){
-    sessionStorage.removeItem("user");
- }
-document.getElementById("logout").addEventListener("click",logout())
- 
+
+document.getElementById("logout").addEventListener("click",logout)
+
  
     // Navbar shrink function
     var navbarShrink = function () {
@@ -101,3 +95,7 @@ document.getElementById("logout").addEventListener("click",logout())
     });
 
 });
+
+var  logout = ()=>{
+    localStorage.removeItem("userobj");
+ }
