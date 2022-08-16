@@ -43,7 +43,7 @@ const empty = object => {
   return flag;
 };
 
-// getData from the database
+// getData for product from the database
 const getData = (dbname, fn) => {
   let index = 0;
   let obj = {};
@@ -61,7 +61,7 @@ const getData = (dbname, fn) => {
     }
   });
 };
-
+// for user data getting
 const userData = (dbname, fn) =>{
   let index = 0;
   let obj = {};

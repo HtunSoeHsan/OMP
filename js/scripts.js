@@ -13,7 +13,9 @@ window.addEventListener('DOMContentLoaded', event => {
     // }
     console.log(JSON.parse(localStorage.getItem("userobj")));
     const user = JSON.parse(localStorage.getItem("userobj"));
-    console.log("user name", user.name)
+    const shop = JSON.parse(localStorage.getItem("shopadmin"));
+
+    // console.log("user name", shop.name)
     // document.getElementById("profile").parentElement.TEXT_NODE ="htun";
 /* <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -45,6 +47,13 @@ window.addEventListener('DOMContentLoaded', event => {
         document.getElementById("profile-img").setAttribute("src",user.profile)
         document.getElementById("login").classList.add("hide-me")
         document.getElementById("profile_container").classList.remove("hide-me")
+        }
+        else if(shop){
+            document.getElementById("profile_name").textContent = shop.name;
+        document.getElementById("profile-img").setAttribute("src",shop.profile);
+        document.getElementById("login").classList.add("hide-me");
+        document.getElementById("admin").classList.remove("hide-me")
+        document.getElementById("profile_container").classList.remove("hide-me");
         }
 
 //  user logout
@@ -97,5 +106,5 @@ document.getElementById("logout").addEventListener("click",logout)
 });
 
 var  logout = ()=>{
-    localStorage.removeItem("userobj");
+    localStorage.clear();
  }
