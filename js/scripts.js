@@ -54,6 +54,7 @@ window.addEventListener('DOMContentLoaded', event => {
         document.getElementById("login").classList.add("hide-me");
         document.getElementById("admin").classList.remove("hide-me")
         document.getElementById("profile_container").classList.remove("hide-me");
+        document.getElementById("beshop").classList.add("hide-me");
         }
 
 //  user logout

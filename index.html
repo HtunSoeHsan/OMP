@@ -43,12 +43,12 @@
                     <li class="nav-item " id="login"><a class="nav-link" href="login.html">Login</a></li>
                     <li class="nav-item dropdown hide-me" id="profile_container">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><img src="" width="20px" height="20px" style="border-radius: 50%;" alt="" id="profile-img"><span
-                                id="profile_name"></span></a>
+                            data-bs-toggle="dropdown" aria-expanded="false"><img src="" width="20px" height="20px"
+                                style="border-radius: 50%;" alt="" id="profile-img"><span id="profile_name"></span></a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#!">Profile</a></li>
                             <li><a class="dropdown-item" href="#!">Notification</a></li>
-                            <li><a class="dropdown-item hide-me" href="dashboard.html" id="admin">Admin</a></li>
+                            <li><a class="dropdown-item hide-me" href="shopadminlogin.html" id="admin">Admin</a></li>
                             <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
@@ -56,7 +56,7 @@
                             <li><a class="dropdown-item" href="index.html" id="logout">Logout</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="shopregister.html">Be Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" id="beshop" href="shopregister.html">Be Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Report</a></li>
                 </ul>
             </div>
@@ -121,7 +121,7 @@
                 <h2 class="section-heading text-uppercase">Shops Here</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" id="shopsection">
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- shop item 1-->
                     <div class="shop-item">
@@ -208,8 +208,9 @@
                 <h2 class="section-heading text-uppercase">Product Here</h2>
                 <h3 class="section-subheading text-muted">You can trust this product.May I serve you</h3>
             </div>
-            <div id="showproductcon" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 mt-5 row-cols-xl-4 justify-content-center">
-                
+            <div id="showproductcon"
+                class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 mt-5 row-cols-xl-4 justify-content-center">
+
             </div>
         </div>
     </section>
@@ -389,7 +390,8 @@
     <div class="shop-modal modal fade" id="shopModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
                 <div class="container mt-n1">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -397,7 +399,8 @@
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">HSH</h2>
                                 <p class="item-intro text-muted">Any kinds of men's clothe you can get here</p>
-                                <img class="img-thumbnail d-block mx-auto rounded" src="assets/img/shop/1.jpg"alt="..." />
+                                <img class="img-thumbnail d-block mx-auto rounded" src="assets/img/shop/1.jpg"
+                                    alt="..." />
                                 <p>
                                     Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
@@ -414,7 +417,8 @@
                                             </tr>
                                             <tr>
                                                 <th><i class="fa-solid fa-envelope"></i></th>
-                                                <td> <a href="mailto:htunsoesann733@gmail.com"> htunsoesann733@gmail.com</a></td>
+                                                <td> <a href="mailto:htunsoesann733@gmail.com">
+                                                        htunsoesann733@gmail.com</a></td>
                                             </tr>
                                             <tr>
                                                 <th><i class="fa-solid fa-mobile"></i></th>
@@ -425,7 +429,7 @@
                                                 <td> <a href="https://www.facebook.com/">Htun Soe Hsan</a></td>
                                             </tr>
                                         </table>
-                                       
+
                                     </div>
                                     <div class="col">
                                         <h4>Items:</h4>
@@ -435,22 +439,23 @@
                                                 <th>Special Product||</th>
                                                 <th>Clothes</th>
                                             </tr>
-                                            
+
                                         </table>
                                     </div>
                                 </div>
-                                
-                                
+
+
                                 <!-- Section-->
                                 <hr class="bg-info">
                                 <h5>Product List</h5>
                                 <section class="py-1">
                                     <div class="container mt-5">
                                         <div class="row  justify-content-center">
-                                            
+
                                             <div class="col mb-5" id="product1">
                                                 <div class="card h-100">
-                                                    <!-- Sale badge-->                                                    <div class="badge bg-dark text-white position-absolute"
+                                                    <!-- Sale badge-->
+                                                    <div class="badge bg-dark text-white position-absolute"
                                                         style="top: 0.5rem; right: 0.5rem">Promotion</div>
                                                     <!-- Product image-->
                                                     <img class="card-img-top"
@@ -551,90 +556,89 @@
                                         </div>
                                     </div>
                                 </section>
-                                
+
                             </div>
                         </div>
                         <!-- for rating -->
                         <!-- Add icon library -->
                         <div class="col-lg-8">
                             <span class="heading">User Rating</span>
-<div class="starcon">
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star"></span>
-</div>
-<p>4.1 average based on 254 reviews.</p>
-<hr style="border:3px solid #f1f1f1">
+                            <div class="starcon">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p>4.1 average based on 254 reviews.</p>
+                            <hr style="border:3px solid #f1f1f1">
 
-<div class="row">
-  <div class="side">
-    <div>5 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-5"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>150</div>
-  </div>
-  <div class="side">
-    <div>4 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-4"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>63</div>
-  </div>
-  <div class="side">
-    <div>3 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-3"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>15</div>
-  </div>
-  <div class="side">
-    <div>2 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-2"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>6</div>
-  </div>
-  <div class="side">
-    <div>1 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-1"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>20</div>
-  </div>
-</div>
+                            <div class="row">
+                                <div class="side">
+                                    <div>5 star</div>
+                                </div>
+                                <div class="middle">
+                                    <div class="bar-container">
+                                        <div class="bar-5"></div>
+                                    </div>
+                                </div>
+                                <div class="side right">
+                                    <div>150</div>
+                                </div>
+                                <div class="side">
+                                    <div>4 star</div>
+                                </div>
+                                <div class="middle">
+                                    <div class="bar-container">
+                                        <div class="bar-4"></div>
+                                    </div>
+                                </div>
+                                <div class="side right">
+                                    <div>63</div>
+                                </div>
+                                <div class="side">
+                                    <div>3 star</div>
+                                </div>
+                                <div class="middle">
+                                    <div class="bar-container">
+                                        <div class="bar-3"></div>
+                                    </div>
+                                </div>
+                                <div class="side right">
+                                    <div>15</div>
+                                </div>
+                                <div class="side">
+                                    <div>2 star</div>
+                                </div>
+                                <div class="middle">
+                                    <div class="bar-container">
+                                        <div class="bar-2"></div>
+                                    </div>
+                                </div>
+                                <div class="side right">
+                                    <div>6</div>
+                                </div>
+                                <div class="side">
+                                    <div>1 star</div>
+                                </div>
+                                <div class="middle">
+                                    <div class="bar-container">
+                                        <div class="bar-1"></div>
+                                    </div>
+                                </div>
+                                <div class="side right">
+                                    <div>20</div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
                     <!-- Footer-->
 
-                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                    type="button">
-                    <i class="fas fa-xmark me-1"></i>
-                    Out Here
-                </button>
+                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                        <i class="fas fa-xmark me-1"></i>
+                        Out Here
+                    </button>
                 </div>
             </div>
         </div>
@@ -646,8 +650,8 @@
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <!-- <script src="./js/main.js" type="module"></script> -->
 
-        <script src="js/scripts.js"></script>
-        <script src="./js/index.js" type="module" ></script>
+    <script src="js/scripts.js"></script>
+    <script src="./js/index.js" type="module"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

@@ -1,6 +1,6 @@
 const productsdb = (dbname, table) => {
   const db = new Dexie(dbname);
-  db.version(7).stores(table);
+  db.version(8).stores(table);
   db.open();
 
   return db;
@@ -56,6 +56,7 @@ const getData = (dbname, fn) => {
         obj = SortObj(table);
         fn(obj, index++); // call function with data argument
       });
+      
     } else {
       fn(0);
     }
@@ -73,6 +74,26 @@ const userData = (dbname, fn) =>{
         // to arrange order we are going to create for in loop
         obj = SortuserObj(table);
         fn(obj, index++); // call function with data argument
+      });
+    } else {
+      fn(0);
+    }
+  });
+}
+
+// for shop data fn
+// for user data getting
+const shopData = (dbname, fn) =>{
+  let index = 0;
+  // let obj = {};
+  dbname.count(count => {
+    // count rows in the table using count method
+    if (count) {
+      dbname.each(table => {
+        // table => return the table object data
+        // to arrange order we are going to create for in loop
+        // obj = SortuserObj(table);
+        fn(table, index++); // call function with data argument
       });
     } else {
       fn(0);
@@ -123,7 +144,8 @@ export {
   getData,
   SortObj,
   userData,
-  SortuserObj
+  SortuserObj,
+  shopData
 };
 
 

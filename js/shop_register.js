@@ -28,6 +28,8 @@ if(!user){
           window.location.href = `./login.html`
         }
       }); 
+}else{
+  
 }
 document.getElementById("userName").value =user.name;
 document.getElementById("userPhone").value = user.phone;
@@ -44,6 +46,7 @@ shopregisterbtn.addEventListener("click",(e)=>{
         address1: document.getElementById("address1").value,
         address2: document.getElementById("address2").value,
         license: document.getElementById("license").value,
+        password: document.getElementById("password").value,
         owner_name: user.name,
         owner_id: user.id,
         owner_email: user.email,

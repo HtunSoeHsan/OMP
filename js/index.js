@@ -2,13 +2,15 @@ import prodb, {
   bulkcreate,
   createEle,
   getData,
-  SortObj
+  SortObj,
+  shopData
 } from "./module.js";
 
 
 let db = prodb("OMP", {
   products: `++id, type, promotion,desc, status, price`,
-  user: `++id, email, name, order`
+  user: `++id, email, name, order`,
+  shop: `++id, owner_email, name, owner_id`
 });
 
 var productcon = document.getElementById("showproductcon");
@@ -95,7 +97,65 @@ db.products
     
     });
 
-// for active product
-// for (const value in data) {
+shopData(db.shop, (data)=>{
+  if(data){
+    // console.log("shop data:",data.type)
+    // for (const value in data) {
+    //   console.log("data:", data.id)
+    // }
+    var shopsection = document.getElementById("shopsection");
+{/* <div class="col-lg-4 col-sm-6 mb-4">
+    <!-- shop item 1-->
+    <div class="shop-item">
+        <a class="shop-link" data-bs-toggle="modal" href="#shopModal1">
+            <div class="shop-hover">
+                <div class="shop-hover-content">Click To View More</div>
+            </div>
+            <img class="img-fluid rounded-top" src="assets/img/shop/1.jpg" alt="..." />
+        </a>
+        <div class="shop-caption">
+            <div class="shop-caption-heading">EPC</div>
+            <div class="shop-caption-subheading text-muted">Watches</div>
+        </div>
+    </div>
+</div> */}
+createEle("div", shopsection, shopcol =>{
+  shopcol.className +="col-lg-4 col-sm-6 mb-4";
+  createEle("div", shopcol, shopitem =>{
+    shopitem.className += "shop-item";
+    createEle("a", shopitem , shoplink =>{
+      shoplink.className += "shop-link";
+      shoplink.setAttribute("data-bs-toggle","modal");
+      shoplink.setAttribute("href","#shopModal1");
+      shoplink.setAttribute("id",data.id);
+      createEle("div", shoplink, shophover =>{
+        shophover.className += "shop-hover";
+        createEle("div",shophover, shophovercontent =>{
+          shophovercontent.className +="shop-hover-content";
+          shophovercontent.textContent ="Click To View More"
+        })
+      })
+      createEle("img",shoplink, shoplogo =>{
+        shoplogo.className +="img-fluid rounded-top";
+        shoplogo.setAttribute("src",data.logo || "assets/img/shop/1.jpg");
+        shoplogo.setAttribute("alt","...");
+      })
+    })
+    createEle("div", shopitem, shopcaption =>{
+      shopcaption.className += "shop-caption";
+      createEle("div", shopcaption, captionheading =>{
+        captionheading.className +="shop-caption-heading";
+        captionheading.textContent = data.name;
+      })
+      createEle("div", shopcaption, captionsubheading =>{
+        captionsubheading.className +="shop-caption-subheading text-muted";
+        captionsubheading.textContent = data.type;
+      })
+    }
+    )
+  })
 
-// }
+})
+shopsection.append(shopcol)
+  }
+})

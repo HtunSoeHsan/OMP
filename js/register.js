@@ -10,7 +10,8 @@ import prodb, {
   
   let db = prodb("OMP", {
     products: `++id, type, promotion,desc, status, price`,
-    user: `++id, email, name, order, status`
+    user: `++id, email, name, order, status`,
+    shop: `++id, owner_email, name, owner_id`
   });
   ////////////////////////////////////////////
 
