@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/assets/img/logos/logo.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="./"><img src="assets/img/logos/logo.png" width="40px" height="50px"
+                    alt="..." /> Home</a>
+            
+            
+        </div>
+    </nav>
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-9 col-xl-7">
+              <div class="card">
+                <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                  <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                      alt="Generic placeholder image" id="userprofileimg" class="img-fluid img-thumbnail mt-4 mb-2"
+                      style="width: 150px; z-index: 1">
+                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-mdb-ripple-color="dark"
+                      style="z-index: 1;">
+                      Edit profile
+                    </button>
+                  </div>
+                  <div class="ms-3" style="margin-top: 130px;">
+                    <h5 id="username"></h5>
+                    <p id="useraddress"></p>
+                  </div>
+                </div>
+                <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                  <div class="d-flex justify-content-end text-center py-1">
+                    <div>
+                      <p class="mb-1 h5">253</p>
+                      <p class="small text-muted mb-0">Photos</p>
+                    </div>
+                    <div class="px-3">
+                      <p class="mb-1 h5">1026</p>
+                      <p class="small text-muted mb-0">Followers</p>
+                    </div>
+                    <div>
+                      <p class="mb-1 h5">478</p>
+                      <p class="small text-muted mb-0">Following</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body p-4 text-black">
+                  <div class="mb-5">
+                    <p class="lead fw-normal mb-1">About</p>
+                    <div class="p-4" style="background-color: #f8f9fa;">
+                      <p class="font-italic mb-1">Web Developer</p>
+                      <p class="font-italic mb-1">Lives in Sittwe</p>
+                      <p class="font-italic mb-0">Photographer</p>
+                    </div>
+                  </div>
+                  <div class="mb-5">
+                    <p class="lead fw-normal mb-1">Contact:</p>
+                    <div class="p-4" style="background-color: #f8f9fa;">
+                      <table>
+                        <tr>
+                            <td>Email:</td>
+                            <td><a id="useremail"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td><a id="userphone"></a></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <p class="lead fw-normal mb-0">Recent photos</p>
+                    <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+                  </div>
+                  <div class="row g-2">
+                    <div class="col mb-2">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                    <div class="col mb-2">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                  </div>
+                  <div class="row g-2">
+                    <div class="col">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                    <div class="col">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- profile edit modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+                <div class="row text-center">
+                    <div class="picture-container">
+                        <div class="picture">
+                            <img src="" class="picture-src" id="editprofilereviewer" title="">
+                            <input type="file" id="wizard-picture" onchange='openFile(event);'>
+                        </div>
+                         <h3 class="">Choose Picture</h3>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Name:</th>
+                            <td>
+                                <input type="text" id="editname" name="" placeholder="User Name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>
+                                <input type="email" id="editemail" name="" placeholder="User Email" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Phone:</th>
+                            <td>
+                                <input type="tel" id="editphone" name="" placeholder="User Phone" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>
+                                <input type="text" id="editaddress" name="" placeholder="User Address" />
+                            </td>
+                        </tr>
+                       
+                    </table>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="userprofileeditbtn" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+  <script src="./js/userProfile.js" type="module"></script>
+  <!-- script for image -->
+  <script>
+    var openFile = function(event) {
+    var input = event.target;
+console.log("hi reaeder")
+    // Instantiate FileReader
+    var reader = new FileReader();
+    reader.onload = function(){
+        TheFileContents = reader.result;
+
+        // Update the output to include the <img> tag with the data URL as the source
+    // document.getElementById("previewimg").setAttribute("width","150px");
+    // document.getElementById("previewimg").setAttribute("height","150px");
+
+    document.getElementById("editprofilereviewer").setAttribute("src",TheFileContents);
+        // document.getElementById("TheImageContents").innerHTML = '<img width="200" style="margin-left:50px;" id="imgaddress" src="'+TheFileContents+'" />';
+console.log(TheFileContents)
+  };
+
+    // Produce a data URL (base64 encoded string of the data in the file)
+    // We are retrieving the first file from the FileList object
+    reader.readAsDataURL(input.files[0]);
+  console.log(reader.result)
+
+};
+</script>
+</body>
+</html>

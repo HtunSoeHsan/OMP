@@ -17,7 +17,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/rating.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="css/about.css">
+    <script src="./js/moment.js"></script>
 
 </head>
 
@@ -25,7 +26,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/logos/logo.png" width="40px" height="50px"
+            <a class="navbar-brand" href="./"><img src="assets/img/logos/logo.png" width="40px" height="50px"
                     alt="..." /> OMP</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,9 +47,9 @@
                             data-bs-toggle="dropdown" aria-expanded="false"><img src="" width="20px" height="20px"
                                 style="border-radius: 50%;" alt="" id="profile-img"><span id="profile_name"></span></a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><a class="dropdown-item" href="userProfile.html">Profile</a></li>
                             <li><a class="dropdown-item" href="#!">Notification</a></li>
-                            <li><a class="dropdown-item hide-me" href="shopadminlogin.html" id="admin">Admin</a></li>
+                            <li><a class="dropdown-item hide-me"  id="admin">Admin</a></li>
                             <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
@@ -78,6 +79,8 @@
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -96,6 +99,13 @@
                 </div>
                 <div class="carousel-item">
                     <img src="./assets/advertise/sann1.jpg" class="d-block w-100 h-50" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <!-- <h5>Third slide label</h5>
+                      <p>Some representative placeholder content for the third slide.</p> -->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/advertise/photo11.jpg.png" class="d-block w-100 h-50" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <!-- <h5>Third slide label</h5>
                       <p>Some representative placeholder content for the third slide.</p> -->
@@ -122,82 +132,7 @@
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row justify-content-center" id="shopsection">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- shop item 1-->
-                    <div class="shop-item">
-                        <a class="shop-link" data-bs-toggle="modal" href="#shopModal1">
-                            <div class="shop-hover">
-                                <div class="shop-hover-content">Click To View More</div>
-                            </div>
-                            <img class="img-fluid rounded-top" src="assets/img/shop/1.jpg" alt="..." />
-                        </a>
-                        <div class="shop-caption">
-                            <div class="shop-caption-heading">EPC</div>
-                            <div class="shop-caption-subheading text-muted">Watches</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- shop item 1-->
-                    <div class="shop-item">
-                        <a class="shop-link" data-bs-toggle="modal" href="#shopModal1">
-                            <div class="shop-hover">
-                                <div class="shop-hover-content">Click To View More</div>
-                            </div>
-                            <img class="img-fluid rounded-top" src="assets/img/shop/1.jpg" alt="..." />
-                        </a>
-                        <div class="shop-caption">
-                            <div class="shop-caption-heading">HSH</div>
-                            <div class="shop-caption-subheading text-muted">Men Clothing</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- shop item 1-->
-                    <div class="shop-item">
-                        <a class="shop-link" data-bs-toggle="modal" href="#shopModal1">
-                            <div class="shop-hover">
-                                <div class="shop-hover-content">Click To View More</div>
-                            </div>
-                            <img class="img-fluid rounded-top" src="assets/img/shop/1.jpg" alt="..." />
-                        </a>
-                        <div class="shop-caption">
-                            <div class="shop-caption-heading">HSH</div>
-                            <div class="shop-caption-subheading text-muted">Men Clothing</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- shop item 1-->
-                    <div class="shop-item">
-                        <a class="shop-link" data-bs-toggle="modal" href="#shopModal1">
-                            <div class="shop-hover">
-                                <div class="shop-hover-content">Click To View More</div>
-                            </div>
-                            <img class="img-fluid rounded-top" src="assets/img/shop/1.jpg" alt="..." />
-                        </a>
-                        <div class="shop-caption">
-                            <div class="shop-caption-heading">HSH</div>
-                            <div class="shop-caption-subheading text-muted">Men Clothing</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- shop item 1-->
-                    <div class="shop-item">
-                        <a class="shop-link" data-bs-toggle="modal" href="#shopModal1">
-                            <div class="shop-hover">
-                                <div class="shop-hover-content">Click To View More</div>
-                            </div>
-                            <img class="img-fluid rounded-top" src="assets/img/shop/1.jpg" alt="..." />
-                        </a>
-                        <div class="shop-caption">
-                            <div class="shop-caption-heading">HSH</div>
-                            <div class="shop-caption-subheading text-muted">Men Clothing</div>
-                        </div>
-                    </div>
-                </div>
-
+               
             </div>
         </div>
     </section>
@@ -206,7 +141,7 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Product Here</h2>
-                <h3 class="section-subheading text-muted">You can trust this product.May I serve you</h3>
+                <h3 class="section-subheading text-muted" id="noproduct">You can trust this product.May I serve you</h3>
             </div>
             <div id="showproductcon"
                 class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 mt-5 row-cols-xl-4 justify-content-center">
@@ -221,153 +156,55 @@
                 <h2 class="section-heading text-uppercase">Promotion</h2>
                 <h6 class="section-subheading text-muted">You can trust this product.May I serve you</h6>
             </div>
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 mt-5 row-cols-xl-4 justify-content-center">
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            Promotion</div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Special Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            Promotion</div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Special Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            Promotion</div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Special Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Sale badge-->
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            Promotion</div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Special Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">View</a>
-                                <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 mt-5 row-cols-xl-4 justify-content-center" id="promotioncon">
+                
             </div>
         </div>
     </section>
     <!-- Footer-->
-    <footer class="footer py-4">
+    <!-- <footer class="footer py-4">
         <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <footer class="footer ">
+        <div class="container-fluid bg-dark text-muted pt-3">
+                <div class="row align-items-start">
+                    <div class="col">
+                        <h3>USER</h3>
+                        <h4 id="totaluser"></h4>
+                    </div>
+                    <div class="col">
+                        <h3>Shop</h3>
+                        <h4 id="totalshop"></h4>
+                    </div>
+                    <div class="col">
+                        <h3>Community</h3>
+                        <a href="aboutPage.html"><p>Team</p></a>
+                        <p>Company</p>
+                    </div>
+                    <div class="col">
+                        <h3>Conact</h3>
+                        <p>Email: <a href="">susulin@gmail.com</a></p>
+                    </div>
+                </div>
+
+        </div>
+        <div class="container-fluid bg-secondary p-3">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
                 <div class="col-lg-4 my-3 my-lg-0">
@@ -390,17 +227,17 @@
     <div class="shop-modal modal fade" id="shopModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                <div class="close-modal" data-bs-dismiss="modal" onclick="window.location.href='./'"><img src="assets/img/close-icon.svg"
                         alt="Close modal" /></div>
                 <div class="container mt-n1">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">HSH</h2>
-                                <p class="item-intro text-muted">Any kinds of men's clothe you can get here</p>
+                                <h2 class="text-uppercase" id="shopName">HSH</h2>
+                                <p class="item-intro text-muted" id="shopType"></p>
                                 <img class="img-thumbnail d-block mx-auto rounded" src="assets/img/shop/1.jpg"
-                                    alt="..." />
+                                    alt="..."  id="shopImg"/>
                                 <p>
                                     Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
@@ -412,21 +249,22 @@
                                         <h4>Contanct:</h4>
                                         <table>
                                             <tr>
-                                                <th><i class="bi bi-shop-window"></i></th>
-                                                <th> Mingin Street(No-2), Sittwe</th>
+                                                <th>Address:</th>
+                                                <th id="shopAddress1"></th>
+                                                <th id="shopAddress2"></th>
                                             </tr>
                                             <tr>
                                                 <th><i class="fa-solid fa-envelope"></i></th>
-                                                <td> <a href="mailto:htunsoesann733@gmail.com">
-                                                        htunsoesann733@gmail.com</a></td>
+                                                <td> <a href="" id="shopEmail">
+                                                        </a></td>
                                             </tr>
                                             <tr>
                                                 <th><i class="fa-solid fa-mobile"></i></th>
-                                                <td> <a href="tel:09456965336">09456965336</a></td>
+                                                <td> <a href="" id="shopPhone"></a></td>
                                             </tr>
                                             <tr>
                                                 <th><i class="fa-brands fa-facebook"></i></th>
-                                                <td> <a href="https://www.facebook.com/">Htun Soe Hsan</a></td>
+                                                <td> <a href="https://www.facebook.com/" id="shopFacebook"></a></td>
                                             </tr>
                                         </table>
 
@@ -450,109 +288,8 @@
                                 <h5>Product List</h5>
                                 <section class="py-1">
                                     <div class="container mt-5">
-                                        <div class="row  justify-content-center">
+                                        <div class="row  justify-content-center" id="shopProduct">
 
-                                            <div class="col mb-5" id="product1">
-                                                <div class="card h-100">
-                                                    <!-- Sale badge-->
-                                                    <div class="badge bg-dark text-white position-absolute"
-                                                        style="top: 0.5rem; right: 0.5rem">Promotion</div>
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top"
-                                                        src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                                                        alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Fancy Product</h5>
-                                                            <!-- Product price-->
-                                                            $120.00 - $280.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center">
-                                                            <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                                            <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-5">
-                                                <div class="card h-100">
-                                                    <!-- Sale badge-->
-                                                    <div class="badge bg-dark text-white position-absolute"
-                                                        style="top: 0.5rem; right: 0.5rem">Out</div>
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top"
-                                                        src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                                                        alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Special Item</h5>
-                                                            <!-- Product reviews-->
-                                                            <div
-                                                                class="d-flex justify-content-center small text-warning mb-2">
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                            </div>
-                                                            <!-- Product price-->
-                                                            <span
-                                                                class="text-muted text-decoration-line-through">$20.00</span>
-                                                            $18.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center">
-                                                            <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                                            <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-5">
-                                                <div class="card h-100">
-                                                    <!-- Sale badge-->
-                                                    <div class="badge bg-dark text-white position-absolute"
-                                                        style="top: 0.5rem; right: 0.5rem">Popular</div>
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top"
-                                                        src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                                                        alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Popular Item</h5>
-                                                            <!-- Product reviews-->
-                                                            <div
-                                                                class="d-flex justify-content-center small text-warning mb-2">
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                            </div>
-                                                            <!-- Product price-->
-                                                            $40.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center">
-                                                            <a class="btn btn-outline-dark mt-auto" href="#">Order</a>
-                                                            <a class="btn btn-outline-dark mt-auto" href="#">Cart</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </section>
@@ -643,6 +380,56 @@
             </div>
         </div>
     </div>
+
+    <!-- product view modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Product Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <div>
+                <img id="imgOfProduct" src="" alt="product img" width="200px" height="200px">
+            </div>
+            <div>
+                <span class="fs-4">Shop - </span><span id="shopOfProduct" class="fs-3"></span>
+            </div>
+            <div>
+                <span class="fs-4">Tye - </span><span id="typeOfProduct" class=" fs-4"></span>
+            </div>
+            <div>
+                <span class="fs-4">Size - </span><span id="sizeOfProduct" class="fs-4"></span>
+            </div>
+            <div>
+                <span class="fs-4">Title - </span><span id="titleOfProduct" class="fs-4"></span>
+            </div>
+            <div>
+                <span class="fs-4" id="priceOfProduct"></span>
+            </div>
+            <div>
+                <span class="fs-4 bg-logo" id="promoTitleOfProduct"></span>
+            </div>
+            <div id="ofproduct">
+
+            </div>
+            <div>
+                <a href="" id="visitShopbtn" class="btn btn-outline-primary">Visit Shop</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Order</button>
+          <button type="button" class="btn btn-primary">Add To Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- Bootstrap core JS-->
     <!-- <script src="./js/shopadmin.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -651,12 +438,14 @@
     <!-- <script src="./js/main.js" type="module"></script> -->
 
     <script src="js/scripts.js"></script>
-    <script src="./js/index.js" type="module"></script>
+    <script src="/js/index.js" type="module"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+    <script src="./js/checkAdmin.js"></script>
+
 </body>
 
 </html>

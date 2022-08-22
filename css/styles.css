@@ -11777,6 +11777,9 @@ section#contact form#contactForm :-ms-input-placeholder {
 .hide-me{
   display: none;
 }
+.bg-logo{
+  background-color: #FF7782;
+}
 @media (mix-width: 789px) {
   .shop-info{
     display: block;

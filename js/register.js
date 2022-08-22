@@ -9,7 +9,7 @@ import prodb, {
   
   
   let db = prodb("OMP", {
-    products: `++id, type, promotion,desc, status, price`,
+    products: `++id, type, promotion,desc,shop_id, status,[status+shop_id],[id+shop_id], price`,
     user: `++id, email, name, order, status`,
     shop: `++id, owner_email, name, owner_id`
   });
@@ -56,11 +56,11 @@ signupbtn.addEventListener("click",(e)=>{
      Swal.fire({
         title: 'Register Successed',
         icon: 'success',
-        text: 'Go home page',
-        confirmButtonText:`Go Home`
+        text: 'Please Login again to be sure',
+        confirmButtonText:`Go Login`
       }).then((result) => {
         if (result.value) {
-          window.location.href = `./`
+          window.location.href = `./login.html`
         }
       }); 
         

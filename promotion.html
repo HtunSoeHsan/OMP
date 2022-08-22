@@ -10,12 +10,21 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/shopadmin.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            .hide-me{
+                display: none;
+            }
+            .bg-logo{
+  background-color: #FF7782;
+}
+        </style>
+
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">OMP</a>
-            <!-- Sidebar Toggle-->
+            <a class="navbar-brand mx-3" href="index.html"><img src="assets/img/logos/logo.png" width="30px" height="30px"
+              alt="..." /><span class="mx-2 fw-bolder" style="color:#FFC815;">OMP</span></a>            <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -69,14 +78,236 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
+                    <div class="container-fluid px-1">
                         <h1 class="mt-4">Promotion</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Promotion</li>
                         </ol>
+                        <section>
+                            <div class="row g-3 align-items-center">
+                                <p id="noproduct" class="mx-5 fs-4"></p>
+                                <div class="col-auto">
+                                  <label for="searchwithpid" class="col-form-label">Search Product</label>
+                                </div>
+                                <div class="col-auto">
+                                  <input type="password" id="searchwithpid" class="form-control" placeholder="Enter product ID" aria-describedby="passwordHelpInline">
+                                </div>
+                                <div class="col-auto">
+                                  <button class="btn btn-primary" id="searchwithpidbtn">Search</button>
+                                </div>
+                              </div>
+                        </section>
+                        <section class="mx-5 hide-me" id="promocontainer">
 
+                          <div id="TheImageContents">
+                            <img id="previewimg" style="margin-left: 100px;" width="100px" height="100px" src="" alt="">
+                          </div>
+                            <table class="">
+                                <tr>
+                                  <td>
+                                    <div class="row g-3 align-items-center mt-1">
+                                      <div class="col-auto">
+                                        <label for="" class="col-form-label fs-4">Type</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="text" id="ptype" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="row g-3 align-items-center mt-1">
+                                      <div class="col-auto">
+                                        <label for="" class="col-form-label fs-4">Size</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="text" id="psize" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+        </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="row g-3 align-items-center mt-1">
+                                      <div class="col-auto">
+                                        <label for="" class="col-form-label fs-4">Price</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="number" id="pprice" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="row g-20 align-items-center mt-4">
+                                      <div class="col-auto">
+                                        <label for="" class="col-form-label fs-4">Desc</label>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-auto">
+                                      <input type="text" id="pdesc" value=""  class="form-control" aria-describedby="passwordHelpInline">
+                                      
+                                    </div>
+                                    
+                                    <div class="col-auto">
+                                      <span id="passwordHelpInline" class="form-text">
+                                      </span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                               
+                                <tr>
+                                    <td>
+                                      <div class="row g-20 align-items-center mt-4">
+                                        <div class="col-auto">
+                                          <label for="" class="col-form-label fs-4">Promotion Title</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                      <div class="col-auto">
+                                        <input type="text" id="promoTitle" value=""  class="form-control" aria-describedby="passwordHelpInline">
+                                        
+                                      </div>
+                                      
+                                      <div class="col-auto">
+                                        <span id="passwordHelpInline" class="form-text">
+                                        </span>
+                                      </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="row g-20 align-items-center mt-4">
+                                        <div class="col-auto">
+                                          <label for="" class="col-form-label fs-4">Promotion Price</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                      <div class="col-auto">
+                                        <input type="text" id="promoPrice" value=""  class="form-control" aria-describedby="passwordHelpInline">
+                                        
+                                      </div>
+                                      
+                                      <div class="col-auto">
+                                        <span id="passwordHelpInline" class="form-text">
+                                        </span>
+                                      </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="row g-20 align-items-center mt-4">
+                                        <div class="col-auto">
+                                          <label for="" class="col-form-label fs-4">Promotion OFF Date</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                      <div class="col-auto">
+                                        <input type="datetime-local" id="promoOffDate" value=""  class="form-control" aria-describedby="passwordHelpInline">
+                                        
+                                      </div>
+                                      
+                                      <div class="col-auto">
+                                        <span id="passwordHelpInline" class="form-text">
+                                        </span>
+                                      </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                <tr><td></td><td></td><td><button class="btn btn-primary ml-5 text-center" id="promosavebtn">Save</button></td></tr>
+                              </table>
+                      </section>
+                      <section>
+                        <!-- show product list -->
+                        <div class="container  mt-5">
+                            <div id="notfound"></div>
+                            <div class="row gx-4  row-cols-1 row-cols-sm-2 row-cols-md-3 mt-5 row-cols-lg-4 justify-content-center" id="promotionContainer">
+                                
+                            </div>
+                        </div>
+                      </section>
                     </div>
                 </main>
+
+                <!-- for promotion section -->
+                <!-- hidden edit modal form -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="edit_desc" class="col-form-label">Desc</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="editPromoDesc" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label  class="col-form-label">Promotion Title</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="editPromoTitle" value="" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label  class="col-form-label">Promotion Price</label>
+                </div>
+                <div class="col-auto">
+                  <input type="number" id="editPromoPrice" value="" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label  class="col-form-label">Promotion OFF Date</label>
+                </div>
+                <div class="col-auto">
+                  <input type="datetime-local" id="editPromoOff" value="" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <input type="text" id="promoProductID" class="form-control" value hidden aria-describedby="passwordHelpInline">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btn-delete" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="promoupdatebtn">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -93,10 +324,64 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/shopadmin.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <!-- sweetalert cdn -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+        <!-- Include Dexie -->
+  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+  <!-- Custom main file-->
+  <script src="./js/promotion.js" type="module"></script>
+
+<script>
+          // This grabs the file contents when the file changes
+var openFile = function(event) {
+	var input = event.target;
+console.log("hi reaeder")
+	// Instantiate FileReader
+	var reader = new FileReader();
+	reader.onload = function(){
+		TheFileContents = reader.result;
+
+		// Update the output to include the <img> tag with the data URL as the source
+    // document.getElementById("previewimg").setAttribute("width","150px");
+    // document.getElementById("previewimg").setAttribute("height","150px");
+
+    document.getElementById("previewimg").setAttribute("src",TheFileContents);
+		// document.getElementById("TheImageContents").innerHTML = '<img width="200" style="margin-left:50px;" id="imgaddress" src="'+TheFileContents+'" />';
+
+  };
+
+	// Produce a data URL (base64 encoded string of the data in the file)
+	// We are retrieving the first file from the FileList object
+	reader.readAsDataURL(input.files[0]);
+  console.log(reader.result)
+
+};
+// for edit upload image
+var editFile = function(event) {
+	var input = event.target;
+console.log("hi reaeder")
+	// Instantiate FileReader
+	var reader = new FileReader();
+	reader.onload = function(){
+		TheFileContents = reader.result;
+
+		// Update the output to include the <img> tag with the data URL as the source
+    
+
+    document.getElementById("editviewimg").setAttribute("src",TheFileContents);
+		// document.getElementById("TheImageContents").innerHTML = '<img width="200" style="margin-left:50px;" id="imgaddress" src="'+TheFileContents+'" />';
+
+  };
+
+	// Produce a data URL (base64 encoded string of the data in the file)
+	// We are retrieving the first file from the FileList object
+	reader.readAsDataURL(input.files[0]);
+  console.log(reader.result)
+
+};
+        </script>
     </body>
 </html>
