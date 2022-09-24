@@ -37,7 +37,7 @@ document.getElementById("userEmail").value = user.email;
 
 console.log(document.getElementById("user_Email"))
 shopregisterbtn.addEventListener("click",(e)=>{
-    // e.preventDefault();
+    e.preventDefault();
     const registerobj = {
       logo: document.getElementById("PicturePreview").getAttribute("src"),
         name: document.getElementById("shopName").value,
